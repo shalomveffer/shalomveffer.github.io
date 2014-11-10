@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="reset.css" />
+        <style>       
+            #header {
+                position: absolute;
+                height: 80%;
+                width: 100%;
+                background-color: rgba(68,68,68,0.8);
+                box-shadow: 0px 0px 6px 3px #888888;
+                text-align: center;
+            }
+            
+            #logo {
+                position: relative;
+                z-index: 1;
+                display: block;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            #navigation {
+                position: relative;
+                width: 100%;
+                z-index: 2;
+                margin-top: -40px;
+            }
+            
+            #navigation ul {
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            
+            #navigation ul li {
+                list-style:none;
+                float: left;
+                text-align: center;
+                width: 25%;
+                width: calc(100% / 4);
+                box-sizing: border-box;
+                margin:0;
+                padding:0;
+            }
+            
+            #navigation ul li:first-child {
+                border-left: none;
+            }
+
+            #navigation ul li a {
+               padding:10px 0;
+               color:#E8E8E8;
+               text-decoration:none;
+            }
+            
+            #navigation ul li a:hover {
+               color:#05A1FF;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <img id="logo" src="images/logo.png" />
+            <div id="navigation">
+                <ul>
+                    <li><a href="preview.html">Home</a></li>
+                    <li><a href="preview.html">About</a></li>
+                    <li><a href="preview.html">Services</a></li>
+                    <li><a href="preview.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
