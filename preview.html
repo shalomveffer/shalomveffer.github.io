@@ -13,7 +13,7 @@
 			function playPromo() {
 				player.playVideo();
 				document.getElementById("videocover").onclick = pausePromo;
-				setTimeout(function(){document.getElementById("videocover").style.display = "none";document.getElementById("videohider").style.display = 'none';},150);
+				setTimeout(function(){document.getElementById("videocover").style.opacity = "0";document.getElementById("videohider").style.display = 'none';},150);
 			}
 			
 			// 2. This code loads the IFrame Player API code asynchronously.
