@@ -13,7 +13,7 @@
 			function playPromo() {
 				player.playVideo();
 				document.getElementById("videocover").onclick = pausePromo;
-				setTimeout(function(){document.getElementById("videocover").style.opacity = "0"},100);
+				setTimeout(function(){document.getElementById("videocover").style.opacity = "0"},150);
 			}
 			
 			// 2. This code loads the IFrame Player API code asynchronously.
@@ -27,14 +27,15 @@
 			var player;
 			function onYouTubeIframeAPIReady() {
 				player = new YT.Player('player', {
-					height: '315',
-					width: '560',
-					videoId: 'syjwpslSZAo',
+					height: '720',
+					width: '1280',
+					videoId: 'syjwpslSZAo',//14Gh0UlF4wc
 					playerVars: {
 					controls: 0,
 					autohide: 1,
-					autoplay: 1
-					
+					autoplay: 1,
+					showinfo: 0,
+					rel: 0
 
 				},
 				events: {
@@ -57,6 +58,10 @@
 				if (event.data == YT.PlayerState.PLAYING && !done) {
 				//setTimeout(stopVideo, 10000);
 				done = true;
+				}
+				if (event.data == YT.PlayerState.ENDED){
+					//player.playVideo();
+					document.getElementById("videocover").style.opacity = "1";
 				}
 			}
 			function stopVideo() {
