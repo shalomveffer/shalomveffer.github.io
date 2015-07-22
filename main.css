@@ -9,6 +9,21 @@
     text-align: center;
 }
 
+#videocover {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	background-image:url(images/paused.png);
+	background-size:cover;
+	opacity:1;
+}
+
+#player {
+	width:100%;
+	height:100%;
+}
+	
 #logo {
     position: relative;
     z-index: 1;
