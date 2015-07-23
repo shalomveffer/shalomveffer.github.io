@@ -17,16 +17,20 @@
 	background-image:url(images/paused.png);
 	background-size:cover;
 	opacity:1;
+    z-index: 3;
 }
 #videohider {
 	position:absolute;
 	width:100%;
 	height:100%;
 	background-color:#1C3D4A;
+    z-index: 2;
 }
 #player {
+    position: inherit;
 	width:100%;
 	height:100%;
+    z-index: 1;
 }
 	
 #logo {
@@ -41,7 +45,7 @@
 #navigation {
     position: relative;
     width: 100%;
-    z-index: 2;
+    z-index: 4;
     margin-top: -40px;
 }
 
@@ -91,7 +95,8 @@
     position:inherit;
     right: 10px;
     top: 10px;
-    cursor: pointer; 
+    cursor: pointer;
+    z-index: 4;
 }
 
 #fullscreen {
@@ -110,4 +115,5 @@
     right: 44px;
     top: 10px;
     cursor: pointer;
+    z-index: 4;
 }

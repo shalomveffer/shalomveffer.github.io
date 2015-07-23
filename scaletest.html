@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="reset.css" />
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="scale.css" />
+<script src="main.js"></script>
+
+<body onresize="resizingWindow()">
+    <img id="scalew" src="images/paused.png">
+        <img id="scaleh" src="images/paused.png"></img>
+    </img>
+
+    <div id="frame">
+        <div id=videohider></div>
+        <div id="videocover" onclick="playPromo()"></div>
+        <img id="mutebutton" src="images/sound-on.png" onclick="mute()"</img>
+        <img id="pausebutton" src="images/play.png" onclick="playPromo()"</img>
+        <div id="player"></div>
+        <img id="bg" src="images/paused.png"></img>
+        <div id="box"></div>
+        <div id="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>resizingWindow()</script>
+</body>
