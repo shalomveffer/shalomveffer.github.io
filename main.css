@@ -84,3 +84,30 @@
     padding-bottom: 56.25%;
     position: relative;
 }
+
+#mutebutton {
+    width: 24px;
+    height: 24px;
+    position:inherit;
+    right: 10px;
+    top: 10px;
+    cursor: pointer; 
+}
+
+#fullscreen {
+    width: 24px;
+    height: 24px;
+    position:inherit;
+    right: 10px;
+    top: 10px;
+    cursor: pointer; 
+}
+
+#pausebutton {
+    width: 24px;
+    height: 24px;
+    position:inherit;
+    right: 44px;
+    top: 10px;
+    cursor: pointer;
+}

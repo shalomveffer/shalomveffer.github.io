@@ -4,16 +4,37 @@
         <link rel="stylesheet" type="text/css" href="reset.css" />
         <link rel="stylesheet" type="text/css" href="main.css" />
 		<script>
-			function pausePromo() {
+            function mute() {
+                player.mute();
+                document.getElementById("mutebutton").onclick = unMute;
+                document.getElementById("mutebutton").src = 'images/sound-off.png';
+                
+            }
+            
+            function unMute() {
+                player.unMute();
+                document.getElementById("mutebutton").onclick = mute;
+                document.getElementById("mutebutton").src = 'images/sound-on.png';
+            }
+            
+            function pausePromo() {
 				player.pauseVideo();
 				document.getElementById("videocover").onclick = playPromo;
 				document.getElementById("videocover").style.opacity = "1";
+                document.getElementById("pausebutton").onclick = playPromo;
+                document.getElementById("pausebutton").src = 'images/play.png';
 			}
 			
 			function playPromo() {
 				player.playVideo();
 				document.getElementById("videocover").onclick = pausePromo;
-				setTimeout(function(){document.getElementById("videocover").style.opacity = "0";document.getElementById("videohider").style.display = 'none';},150);
+				setTimeout(function(){
+                        document.getElementById("videocover").style.opacity = "0";
+                        document.getElementById("videohider").style.display = 'none';
+                        document.getElementById("pausebutton").onclick = pausePromo;
+                        document.getElementById("pausebutton").src = 'images/pause.png';
+                    },150
+                );
 			}
 			
 			// 2. This code loads the IFrame Player API code asynchronously.
@@ -75,6 +96,8 @@
             <div id="header">
 				<div id=videohider></div>
 				<div id="videocover" onclick="playPromo()"></div>
+                <img id="mutebutton" src="images/sound-on.png" onclick="mute()"</img>
+                <img id="pausebutton" src="images/play.png" onclick="playPromo()"</img>
 				<div id="player"></div>
                 <!-- <img id="logo" src="images/logo.png" /> -->
                 <div id="navigation">
