@@ -155,3 +155,20 @@ body{
     width: 100%;
     height: 100%;
 }
+
+#content {
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 25px;
+    font-family: "museo-slab",serif;
+    font-style: normal;
+    font-weight: 300;
+    
+    
+}
+
+p {
+    padding-top: 30;
+}
