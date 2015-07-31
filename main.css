@@ -162,9 +162,10 @@ body{
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 25px;
-    font-family: "museo-slab",serif;
+    font-family: "museo-slab", serif;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
+    color: #1d3d4b;
     
     
 }
