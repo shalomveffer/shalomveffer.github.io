@@ -1,3 +1,7 @@
+body{
+    background-color: #ffffff;
+}
+
 #header {
     position: absolute;
     top: 0;
@@ -46,11 +50,13 @@
     position: relative;
     width: 100%;
     z-index: 4;
-    margin-top: -40px;
+    height: 50px;
+    
 }
 
 #navigation ul {
     overflow: hidden;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -61,10 +67,12 @@
     text-align: center;
     width: 25%;
     width: calc(100% / 4);
+    height: 100%;
     box-sizing: border-box;
     margin:0;
-    padding:0;
+    padding:12 0 0 0;
     font-size: 130%;
+    background-color: #1d3d4b;
 }
 
 #navigation ul li:first-child {
@@ -116,4 +124,34 @@
     top: 10px;
     cursor: pointer;
     z-index: 4;
+}
+
+#container {
+    max-width: 901px;
+    min-width: 300px;
+    width:80%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 3px #7A7A7A;
+    background-color: #ffffff;
+    
+}
+
+#videoWrapper {
+    position: relative;
+    width: 901px;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+#youtubeFrame {
+    background-image: url(images/youtubepng8.png);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
