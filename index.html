@@ -47,14 +47,14 @@
     </head>
     <body onresize="resizingWindow()">
         <img id="scalew" src="images/paused.png">
-            <img id="scaleh" src="images/paused.png"></img>
+            <img id="scaleh" src="images/paused.png" onload="resizingWindow()"></img>
         </img>
+        
 
         <div id="frame">
             <iframe id="youtubeFrame" width="1280" height="720" src="https://www.youtube.com/embed/0i14vc6O6lk?rel=0&showinfo=0&modestbranding=1&autohide=1" frameborder="0" allowfullscreen></iframe>
-            <div id="player"></div>
         </div>
-        <script>resizingWindow()</script>
+        
     </body>
     <footer>
         <script>
