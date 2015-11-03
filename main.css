@@ -181,3 +181,18 @@ p {
     background-image: url(images/logo-dark.png);
     margin: auto;
 }
+#home {
+    display: block;
+}
+
+#about {
+    display: none;
+}
+
+#services {
+    display: none;
+}
+
+#contact {
+    display: none;
+}
