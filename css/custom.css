@@ -1,2 +1,4 @@
 /*! Place your custom styles here */
+
 .bar .logo{ max-width: none; max-height: 100px; }
+.masonry-filter-container{ display: none; }
