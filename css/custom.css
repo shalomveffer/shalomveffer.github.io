@@ -1,4 +1,6 @@
 /*! Place your custom styles here */
 
-.bar .logo{ max-width: none; max-height: 80px; }
+.bar .logo{ max-width: none; max-height: 100px; }
+.bar.bar--sm{background: #252525;}
+.hamburger-toggle i { color: #4a90e2; }
 .masonry-filter-container{ display: none; }
