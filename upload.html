@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script type= "text/javascript" src= "https://api.clipchamp.com/jOQFeZsUZFN1dKInqn2KGAVm8GQ/button.js">
+</script>
+</head>
+<body>
+<h1>Hello World</h1>
+<div id="clipchamp-button"></div>
+<script type="text/javascript">
+  var el = document.querySelector("#clipchamp-button");
+  // For more customization options refer to our Documentation.
+  var options = {
+      output: "dummy",
+      logo: "https://api.clipchamp.com/static/button/images/logo-dark.svg",
+       style: {
+           url:   "https://api.clipchamp.com/static/button/themes/modern-light.css"
+       }
+  };
+  clipchamp(el, options);
+</script>
+</body>
+</html>
