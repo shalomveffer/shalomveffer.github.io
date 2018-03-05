@@ -9,6 +9,10 @@
 <div id="clipchamp-button"></div>
 <div id="recorder"></div>
 <script type="text/javascript">
+  //get whatever is after the = in the url bar and save it to the uploaderId variable
+  var url = window.location.href;
+  var uploaderId=url.split("=");
+  
   var el = document.querySelector("#clipchamp-button");
   var rec = document.querySelector("#recorder");
   var options = {
@@ -16,30 +20,11 @@
      label: "Click To Upload Video Response",
      enable: "no-branding",
      inline: {wrapper: rec},
-     upload: {filename: "scott"},
+     upload: {filename: uploaderId},
      logo: "",
      title: "Please upload your video response."
   };
   clipchamp(el, options);
 </script>
-<!-- 
-<h1>---------</h1>  
-<br><br>
-
-<h1>Pipe:</h1>
-<!-- begin video recorder code
-<script type="text/javascript">
-var size = {width:640,height:390};
-var flashvars = {qualityurl: "avq/720p.xml",accountHash:"419398391ec7f050d9210ed18aa2dbd5", eid:1, showMenu:"true", mrt:120,sis:0,asv:1,mv:0, dpv:0, ao:0, dup:0};
-(function() {var pipe = document.createElement('script'); pipe.type = 'text/javascript'; pipe.async = true;pipe.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 's1.addpipe.com/1.3/pipe.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pipe, s);})();
-</script>
-<div id="hdfvr-content" ></div>
-end video recorder code 
-
-<h1>----------------------</h1>  
-<br><br>
-<h1>iOS upload button test</h1>
-<input type="file" accept="video/*" capture="user">
--->
 </body>
 </html>
