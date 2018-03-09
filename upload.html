@@ -33,29 +33,6 @@
 	pointer-events: none;
 }
 
-
-#submitLabel {
-	width:150px;
-	height:100px;
-	padding-top:25px;
-	text-align: center;
-    	font-size: 1.25em;
-   	 font-weight: 700;
-    	color: white;
-    	background-color: black;
-  	  display: inline-block;
-	cursor: pointer; /* "hand" cursor */
-}
-
-#submitLabel:focus,
-#submitLabel:hover {
-   	 background-color: green;
-}
-
-#submitLabel * {
-	pointer-events: none;
-}
-
 </style>
 <!--  
 <script type= "text/javascript" src= "https://api.clipchamp.com/RckxV7XpMXYrOdNQfCqX0k6QicM/button.js">
@@ -112,7 +89,6 @@ function sendFileToB2() {
 <input type="file" name="file" id="file" accept="video/*" capture="user" /><br />
 <label id="fileLabel" for="file">Tap to RECORD video response</label><br />
 <button type="button" id="submitButton" onclick="sendFileToB2()">Change Content</button><br />
-<label id="submitLabel" for="submitButton">Tap to UPLOAD video response</label><br />
 Status:<div id="status"></div>
 
 <!-- End Mobile uploader test -->
