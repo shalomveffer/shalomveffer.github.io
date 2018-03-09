@@ -1,8 +1,66 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+<style>
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#fileLabel {
+	width:100%;
+	height:25%;
+	padding-top:25%;
+	text-align: center;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: gray;
+    display: inline-block;
+	cursor: pointer; /* "hand" cursor */
+}
+
+#fileLabel:focus,
+#fileLabel:hover {
+    background-color: green;
+}
+
+#fileLabel * {
+	pointer-events: none;
+}
+
+
+#submitLabel {
+	width:100%;
+	height:25%;
+	padding-top:25%;
+	text-align: center;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+	cursor: pointer; /* "hand" cursor */
+}
+
+#submitLabel:focus,
+#submitLabel:hover {
+    background-color: green;
+}
+
+#submitLabel * {
+	pointer-events: none;
+}
+
+</style>
+  
 <script type= "text/javascript" src= "https://api.clipchamp.com/RckxV7XpMXYrOdNQfCqX0k6QicM/button.js">
 </script>
+  
 </head>
 <body>
 <!-- <h1>ClipChamp:</h1>
@@ -52,8 +110,10 @@ function sendFileToB2() {
 }
 </script>
 
-<input type="file" id="myFileField" accept="video/*" capture="user" /> <br />
-<button type="button" onclick="sendFileToB2()">Change Content</button>
+<input type="file" name="file" id="file" class="inputfile" accept="video/*" capture="user" />
+<label id="fileLabel" for="file">Tap to RECORD video response</label><br />
+<button type="button" id="submitButton" class="inputfile" onclick="sendFileToB2()">Change Content</button>
+<label id="submitLabel" for="submitButton">Tap to UPLOAD video response</label><br />
 <div id="status"></div>
 
 <!-- End Mobile uploader test -->
