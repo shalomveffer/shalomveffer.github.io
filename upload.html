@@ -26,5 +26,37 @@
   };
   clipchamp(el, options);
 </script>
+  
+<!-- Mobile uploader test -->
+<h1>Mobile Upload test</h1>
+  
+<script>
+function sendFileToB2() {
+  var file1 = document.getElementById("myFileField").files[0];
+  
+  var xhr = new XMLHttpRequest();
+  
+  xhr.upload.onprogress = function(e){
+    var done = e.position || e.loaded, total = e.totalSize || e.total
+    var present = Math.floor(done/total*100)
+    document.getElementById('status').innerHTML = present + '%'
+  }
+  
+  xhr.open("POST", "https://pod-000-1101-09.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001101_t0049", true);
+  xhr.setRequestHeader("Authorization", "3_20180309202113_043cf4e88aeba6489ea43466_16b8f648c8d525987f4b5dfe2257e6eaa3d969d0_001_upld");
+  xhr.setRequestHeader("X-Bz-File-Name", file1.name);
+  xhr.setRequestHeader("Content-Type", file1.type);
+  xhr.setRequestHeader("X-Bz-Content-Sha1", "do_not_verify");
+  xhr.setRequestHeader("X-Bz-Info-Author", "JavascriptTest");
+  xhr.send(file1);
+}
+</script>
+
+<input type="file" id="myFileField" accept="video/*" capture="user" /> <br />
+<button type="button" onclick="sendFileToB2()">Change Content</button>
+<div id="status"></div>
+
+<!-- End Mobile uploader test -->
+  
 </body>
 </html>
