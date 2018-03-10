@@ -16,20 +16,41 @@
 	height:100px;
 	padding-top:25px;
 	text-align: center;
-    	font-size: 1.25em;
-    	font-weight: 700;
-    	color: white;
-    	background-color: gray;
-	display: inline-block;
+    font-weight: 700;
+    color: white;
+    background-color: gray;
+    display: inline-block;
 	cursor: pointer; /* "hand" cursor */
 }
 
 #fileLabel:focus,
 #fileLabel:hover {
-	background-color: green;
+    background-color: green;
 }
 
 #fileLabel * {
+	pointer-events: none;
+}
+
+
+#submitLabel {
+	width:150px;
+	height:100px;
+	padding-top:25px;
+	text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+	cursor: pointer; /* "hand" cursor */
+}
+
+#submitLabel:focus,
+#submitLabel:hover {
+    background-color: green;
+}
+
+#submitLabel * {
 	pointer-events: none;
 }
 
@@ -73,7 +94,7 @@ function sendFileToB2() {
   xhr.upload.onprogress = function(e){
     var done = e.position || e.loaded, total = e.totalSize || e.total
     var present = Math.floor(done/total*100)
-    document.getElementById('status').innerHTML = present + '%'
+    document.getElementById('file').innerHTML = present + '%'
   }
   
   xhr.open("POST", "https://pod-000-1101-09.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001101_t0049", true);
@@ -87,8 +108,9 @@ function sendFileToB2() {
 </script>
 
 <input type="file" name="file" id="file" accept="video/*" capture="user" /><br />
-<label id="fileLabel" for="file">Tap to RECORD video response</label><br />
-<button type="button" id="submitButton" onclick="sendFileToB2()">Change Content</button><br />
+<label id="fileLabel" for="file">RECORD</label><br />
+<button type="button" id="submitButton" class="inputfile" onclick="sendFileToB2()">Change Content</button>
+<label id="submitLabel" for="submitButton">UPLOAD</label><br />
 Status:<div id="status"></div>
 
 <!-- End Mobile uploader test -->
