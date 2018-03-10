@@ -94,7 +94,7 @@ function sendFileToB2() {
   xhr.upload.onprogress = function(e){
     var done = e.position || e.loaded, total = e.totalSize || e.total
     var present = Math.floor(done/total*100)
-    document.getElementById('file').innerHTML = present + '%'
+    document.getElementById('status').innerHTML = present + '%'
   }
   
   xhr.open("POST", "https://pod-000-1101-09.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001101_t0049", true);
