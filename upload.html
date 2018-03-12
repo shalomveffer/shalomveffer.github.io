@@ -96,10 +96,13 @@ function sendFileToB2() {
     var present = Math.floor(done/total*100)
     document.getElementById('status').innerHTML = present + '%'
   }
-  
+  //get whatever is after the = in the url bar and save it to the uploaderId variable
+  var url = window.location.href;
+  var uploaderId=url.split("=");
+	
   xhr.open("POST", "https://pod-000-1100-14.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001100_t0032", true);
   xhr.setRequestHeader("Authorization", "3_20180312192025_19697a00a8c71a9c8f338048_450144c4211444f1254e4bd02aac204e18238e46_001_upld");
-  xhr.setRequestHeader("X-Bz-File-Name", file1.name);
+  xhr.setRequestHeader("X-Bz-File-Name", uploaderId);
   xhr.setRequestHeader("Content-Type", file1.type);
   xhr.setRequestHeader("X-Bz-Content-Sha1", "do_not_verify");
   xhr.setRequestHeader("X-Bz-Info-Author", "JavascriptTest");
