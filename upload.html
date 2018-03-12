@@ -92,34 +92,35 @@
   
 <script>
 function sendFileToB2() {
-  var file1 = document.getElementById("file").files[0];
-  
-  var xhr = new XMLHttpRequest();
-  
-  xhr.upload.onprogress = function(e){
-    var done = e.position || e.loaded, total = e.totalSize || e.total
-    var present = Math.floor(done/total*100)
-    document.getElementById('status').innerHTML = present + '%'
-  }
-  
-  xhr.addEventListener('readystatechange', function(e) {
-      if( this.readyState === 4 ) {
-        document.getElementById('wrapper').innerHTML = "Upload Complete, <br /> Thank you!"
-      }
-  });
-  
-  
-  //get whatever is after the = in the url bar and save it to the uploaderId variable
-  var url = window.location.href;
-  var uploaderFilename=url.split("=")[1]+"."+file1.name.split(".").pop();
+	  var file1 = document.getElementById("file").files[0];
+
+	  var xhr = new XMLHttpRequest();
+
+	  xhr.upload.onprogress = function(e){
+		var done = e.position || e.loaded, total = e.totalSize || e.total
+		var present = Math.floor(done/total*100)
+		document.getElementById('status').innerHTML = present + '%'
+	  }
+
+	  xhr.addEventListener('readystatechange', function(e) {
+		if( this.readyState === 4 ) {
+			document.getElementById('wrapper').innerHTML = "Upload Complete, <br /> Thank you!"
+		}
+	  });
+		
+	  document.getElementById('statusText').innerHTML = "Status:"
 	
-  xhr.open("POST", "https://pod-000-1101-03.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001101_t0024", true);
-  xhr.setRequestHeader("Authorization", "3_20180312203624_05b2bf1132b660b32317eeb4_0db137e2974c4068ca25f2bac22826d83a6c8f28_001_upld");
-  xhr.setRequestHeader("X-Bz-File-Name", uploaderFilename);
-  xhr.setRequestHeader("Content-Type", file1.type);
-  xhr.setRequestHeader("X-Bz-Content-Sha1", "do_not_verify");
-  xhr.setRequestHeader("X-Bz-Info-Author", "JavascriptTest");
-  xhr.send(file1);
+	  //get whatever is after the = in the url bar and save it to the uploaderId variable
+	  var url = window.location.href;
+	  var uploaderFilename=url.split("=")[1]+"."+file1.name.split(".").pop();
+
+	  xhr.open("POST", "https://pod-000-1101-03.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001101_t0024", true);
+	  xhr.setRequestHeader("Authorization", "3_20180312203624_05b2bf1132b660b32317eeb4_0db137e2974c4068ca25f2bac22826d83a6c8f28_001_upld");
+	  xhr.setRequestHeader("X-Bz-File-Name", uploaderFilename);
+	  xhr.setRequestHeader("Content-Type", file1.type);
+	  xhr.setRequestHeader("X-Bz-Content-Sha1", "do_not_verify");
+	  xhr.setRequestHeader("X-Bz-Info-Author", "JavascriptTest");
+	  xhr.send(file1);
 }
 </script>
 <div id="wrapper">
@@ -132,7 +133,8 @@ function sendFileToB2() {
 	</script>
 	<!--<button type="button" id="submitButton" class="inputfile" onclick="sendFileToB2()">Change Content</button>
 	<label id="submitLabel" for="submitButton">UPLOAD</label><br />-->
-	Status:<div id="status"></div>
+	<div id="statusText">Status:</div>
+	<div id="status"></div>
 </div>
 <!-- End Mobile uploader test -->
   
