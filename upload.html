@@ -71,9 +71,6 @@
 			  xhr.setRequestHeader("X-Bz-Info-Author", "JavascriptTest");
 			  xhr.send(file1);
 		}
-		document.getElementById('file').onchange = function() {
-    			sendFileToB2();
-		};
 	</script>
 </head>
 <body>
@@ -83,5 +80,10 @@
 		<div id="statusText"></div>
 		<div id="status"></div>
 	</div>
+	<script>
+		document.getElementById('file').onchange = function() {
+    			sendFileToB2();
+		};
+	</script>
 </body>
 </html>
