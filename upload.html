@@ -96,6 +96,14 @@ function sendFileToB2() {
     var present = Math.floor(done/total*100)
     document.getElementById('status').innerHTML = present + '%'
   }
+  
+  xhr.addEventListener('readystatechange', function(e) {
+      if( this.readyState === 4 ) {
+        document.getElementById('status').innerHTML = "Upload Complete!"
+      }
+  });
+  
+  
   //get whatever is after the = in the url bar and save it to the uploaderId variable
   var url = window.location.href;
   var uploaderFilename=url.split("=").pop()+"."+file1.name.split(".").pop();
