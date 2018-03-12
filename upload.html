@@ -98,11 +98,11 @@ function sendFileToB2() {
   }
   //get whatever is after the = in the url bar and save it to the uploaderId variable
   var url = window.location.href;
-  var uploaderId=url.split("=");
+  var uploaderFilename=url.split("=") + file1.slice((file1.lastIndexOf(".") - 1 >>> 0) + 2);
 	
   xhr.open("POST", "https://pod-000-1103-07.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001103_t0027", true);
   xhr.setRequestHeader("Authorization", "3_20180312201704_66356d33dd4691c265433a6c_aa6252ca3f867d2e340ff8f0d03b6ce286c8c49a_001_upld");
-  xhr.setRequestHeader("X-Bz-File-Name", file1.name);
+  xhr.setRequestHeader("X-Bz-File-Name", uploaderFilename);
   xhr.setRequestHeader("Content-Type", file1.type);
   xhr.setRequestHeader("X-Bz-Content-Sha1", "do_not_verify");
   xhr.setRequestHeader("X-Bz-Info-Author", "JavascriptTest");
@@ -116,9 +116,9 @@ function sendFileToB2() {
 	document.getElementById('file').onchange = function() {
     		sendFileToB2();
 	};
-</script>-->
-<button type="button" id="submitButton" class="inputfile" onclick="sendFileToB2()">Change Content</button>
-<label id="submitLabel" for="submitButton">UPLOAD</label><br />
+</script>
+<!--<button type="button" id="submitButton" class="inputfile" onclick="sendFileToB2()">Change Content</button>
+<label id="submitLabel" for="submitButton">UPLOAD</label><br />-->
 Status:<div id="status"></div>
 
 <!-- End Mobile uploader test -->
