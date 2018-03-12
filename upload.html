@@ -100,8 +100,8 @@ function sendFileToB2() {
   var url = window.location.href;
   var uploaderFilename=url.split("=") + file1.name.split('.').pop();
 	
-  xhr.open("POST", "https://pod-000-1103-07.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001103_t0027", true);
-  xhr.setRequestHeader("Authorization", "3_20180312201704_66356d33dd4691c265433a6c_aa6252ca3f867d2e340ff8f0d03b6ce286c8c49a_001_upld");
+  xhr.open("POST", "https://pod-000-1101-03.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001101_t0024", true);
+  xhr.setRequestHeader("Authorization", "3_20180312203624_05b2bf1132b660b32317eeb4_0db137e2974c4068ca25f2bac22826d83a6c8f28_001_upld");
   xhr.setRequestHeader("X-Bz-File-Name", uploaderFilename);
   xhr.setRequestHeader("Content-Type", file1.type);
   xhr.setRequestHeader("X-Bz-Content-Sha1", "do_not_verify");
