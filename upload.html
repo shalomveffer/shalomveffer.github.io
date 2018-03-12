@@ -98,7 +98,7 @@ function sendFileToB2() {
   }
   //get whatever is after the = in the url bar and save it to the uploaderId variable
   var url = window.location.href;
-  var uploaderFilename=url.split("=") + file1.split('.').pop();
+  var uploaderFilename=url.split("=") + file1.name.split('.').pop();
 	
   xhr.open("POST", "https://pod-000-1103-07.backblaze.com/b2api/v1/b2_upload_file/82dcd994369ffbdf6d1f001b/c001_v0001103_t0027", true);
   xhr.setRequestHeader("Authorization", "3_20180312201704_66356d33dd4691c265433a6c_aa6252ca3f867d2e340ff8f0d03b6ce286c8c49a_001_upld");
