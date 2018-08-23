@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <script>
+            var x = document.getElementById("demo");
+            
+            function checkLocation() {
+            navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            
+            function showPosition(position) {
+                x.innerHTML = "hi" + position.coords.latitude + position.coords.longitude;
+            }
+        </script>
+    </head>
+    <body onload="checkLocation()">
+        <div id="demo"></div>
+    </body>
+</html>
