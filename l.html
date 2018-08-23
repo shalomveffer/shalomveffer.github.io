@@ -5,11 +5,13 @@
 <p>Click the button to get your coordinates.</p>
 
 <button onclick="getLocation()">Try It</button>
+    
 
-<p id="demo"></p>
+
+<div id="location"></div>
 
 <script>
-var x = document.getElementById("demo");
+var x = document.getElementById("location");
 
 function getLocation() {
     if (navigator.geolocation) {
